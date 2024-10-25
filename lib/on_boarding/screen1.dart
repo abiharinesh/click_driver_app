@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-//ldkwqmkd
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
