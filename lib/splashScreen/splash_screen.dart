@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:click_driver_app/on_boarding/screen1.dart';
 import 'package:flutter/material.dart';
 import 'package:click_driver_app/mainScreens/main_screen.dart';
 
@@ -11,7 +12,7 @@ class MySplashScreen extends StatefulWidget {
 
 class _MySplashScreenState extends State<MySplashScreen> {
   // Timer duration (in seconds)
-  static const int splashDuration = 300;
+  static const int splashDuration = 3;
 
   // Navigate to MainScreen after the timer expires
   void startTimer() {
@@ -19,7 +20,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => MainScreen()),
+          MaterialPageRoute(builder: (context) => OnboardingScreen()),
         );
       }
     });

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:click_driver_app/authentication/login_screen.dart';
 import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
@@ -157,8 +158,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           // "Get Started" Button - Position Adjustable
           ElevatedButton(
             onPressed: () {
-              // Add your navigation or functionality here
-            },
+                  // Navigate to Sign Up screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                  );
+                },
             child: Text('Get Started', style: TextStyle(color: Colors.white)),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromARGB(255, 98, 17, 45), // Button color
