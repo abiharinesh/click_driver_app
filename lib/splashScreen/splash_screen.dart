@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:click_driver_app/mainScreens/main_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:click_driver_app/mainScreens/main_screen.dart';
 
 class MySplashScreen extends StatefulWidget {
   const MySplashScreen({super.key});
@@ -10,13 +10,16 @@ class MySplashScreen extends StatefulWidget {
 }
 
 class _MySplashScreenState extends State<MySplashScreen> {
-  // Start the timer and navigate to MainScreen after 3 seconds
+  // Timer duration (in seconds)
+  static const int splashDuration = 300;
+
+  // Navigate to MainScreen after the timer expires
   void startTimer() {
-    Timer(const Duration(seconds: 300), () {
+    Timer(const Duration(seconds: splashDuration), () {
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (c) => MainScreen()),
+          MaterialPageRoute(builder: (context) => MainScreen()),
         );
       }
     });
@@ -25,41 +28,45 @@ class _MySplashScreenState extends State<MySplashScreen> {
   @override
   void initState() {
     super.initState();
-    startTimer();
+    startTimer(); // Start the timer when splash screen initializes
   }
 
   @override
   Widget build(BuildContext context) {
-    // Get the screen size
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    return Material(
-      child: Container(
-        color: Colors.white,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Adjust the logo size dynamically based on screen width
-              Image.asset(
-                "assets/images/click_logo.png",
-                width: screenWidth * 0.6, // 60% of screen width
-                height: screenHeight * 0.3, // 30% of screen height
-                fit: BoxFit.contain,
-              ),
-              SizedBox(height: screenHeight * 0.1), // 10% vertical spacing
-              // Adjust the splash image size dynamically
-              Image.asset(
-                "assets/images/driver_splash_image.png",
-                width: screenWidth * 500, // 80% of screen width
-                height: screenHeight * 0.6, // 40% of screen height
-                fit: BoxFit.contain,
-              ),
-            ],
-          ),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildLogo(screenWidth, screenHeight),
+            SizedBox(height: screenHeight * 0.1), // 10% vertical spacing
+            _buildSplashImage(screenWidth, screenHeight),
+          ],
         ),
       ),
+    );
+  }
+
+  // Method to build the logo widget with responsive size
+  Widget _buildLogo(double screenWidth, double screenHeight) {
+    return Image.asset(
+      "assets/images/click_logo.png",
+      width: screenWidth * 0.6, // 60% of screen width
+      height: screenHeight * 0.3, // 30% of screen height
+      fit: BoxFit.contain,
+    );
+  }
+
+  // Method to build the splash image widget with responsive size
+  Widget _buildSplashImage(double screenWidth, double screenHeight) {
+    return Image.asset(
+      "assets/images/driver_splash_image.png",
+      width: screenWidth * 0.8, // 80% of screen width
+      height: screenHeight * 0.4, // 40% of screen height
+      fit: BoxFit.contain,
     );
   }
 }
