@@ -1,6 +1,8 @@
 import 'package:click_driver_app/mainScreens/side_menu.dart';
 import 'package:flutter/material.dart';
 
+//hiiiiii
+
 class MainScreen extends StatelessWidget {
   // Create a GlobalKey to control the Scaffold
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -12,7 +14,8 @@ class MainScreen extends StatelessWidget {
     // Get screen size using MediaQuery
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final isSmallScreen =screenWidth < 600; // Example threshold for small screens
+    final isSmallScreen =
+        screenWidth < 600; // Example threshold for small screens
 
     return Scaffold(
       key: _scaffoldKey, // Assign the GlobalKey to Scaffold
