@@ -11,7 +11,7 @@ class MySplashScreen extends StatefulWidget {
 
 class _MySplashScreenState extends State<MySplashScreen> {
   // Timer duration (in seconds)
-  static const int splashDuration = 300;
+  static const int splashDuration = 3;
 
   // Navigate to MainScreen after the timer expires
   void startTimer() {

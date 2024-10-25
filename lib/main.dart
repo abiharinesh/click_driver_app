@@ -1,4 +1,4 @@
-import 'package:click_driver_app/splashScreen/splash_screen.dart';
+import 'package:click_driver_app/on_boarding/screen1.dart';
 import 'package:flutter/material.dart';
 // final pricess
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MySplashScreen(),
+      home: OnboardingScreen(),
     );
   }
 }
