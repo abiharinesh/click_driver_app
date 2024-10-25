@@ -2,7 +2,6 @@ import 'package:click_driver_app/mainScreens/side_menu.dart';
 import 'package:flutter/material.dart';
 
 //hiiiiii
-//abi
 
 class MainScreen extends StatelessWidget {
   // Create a GlobalKey to control the Scaffold
